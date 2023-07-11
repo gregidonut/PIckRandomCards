@@ -12,9 +12,6 @@ internal static class Program
             Environment.Exit(1);
         }
 
-        foreach (var card in CardPicker.PickSomeCards(3))
-        {
-            Console.WriteLine(card);
-        }
+        foreach (var card in CardPicker.PickSomeCards(3)) Console.WriteLine(card);
     }
 }

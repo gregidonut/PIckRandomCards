@@ -29,16 +29,18 @@ public class CardPicker
 
     private static string RandomValue()
     {
-        var values = new[]
+        var values = new List<string>
         {
             "Ace",
             "Jack",
             "Queen",
             "King"
         };
-        
+
+        for (var i = 2; i < 9; i++) values.Add(i.ToString());
+
         var rnd = new Random();
 
-        return values[rnd.Next(values.Length)];
+        return values[rnd.Next(values.Count)];
     }
 }
