@@ -7,12 +7,12 @@ public class CardPicker
         var pickedCards = new string[numberOfCards];
 
         for (var i = 0; i < numberOfCards; i++)
-            pickedCards[i] = RandomeValue() + " of " + RandomeSuit();
+            pickedCards[i] = RandomValue() + " of " + RandomSuit();
 
         return pickedCards;
     }
 
-    private static string RandomeSuit()
+    private static string RandomSuit()
     {
         var suits = new[]
         {
@@ -27,7 +27,7 @@ public class CardPicker
         return suits[rnd.Next(suits.Length)];
     }
 
-    private static string RandomeValue()
+    private static string RandomValue()
     {
         throw new NotImplementedException();
     }
