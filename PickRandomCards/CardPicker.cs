@@ -14,7 +14,17 @@ public class CardPicker
 
     private static string RandomeSuit()
     {
-        throw new NotImplementedException();
+        var suits = new[]
+        {
+            "Spades",
+            "Diamonds",
+            "Hearts",
+            "Clover"
+        };
+
+        var rnd = new Random();
+
+        return suits[rnd.Next(suits.Length)];
     }
 
     private static string RandomeValue()
