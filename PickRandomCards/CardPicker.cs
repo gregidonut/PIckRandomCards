@@ -11,4 +11,14 @@ public class CardPicker
 
         return pickedCards;
     }
+
+    private static string RandomeSuit()
+    {
+        throw new NotImplementedException();
+    }
+
+    private static string RandomeValue()
+    {
+        throw new NotImplementedException();
+    }
 }
