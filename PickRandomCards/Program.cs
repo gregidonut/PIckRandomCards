@@ -12,6 +12,15 @@ internal static class Program
             Environment.Exit(1);
         }
 
-        foreach (var card in CardPicker.PickSomeCards(3)) Console.WriteLine(card);
+        Console.Write("Enter the number of cards to pick: ");
+        var line = Console.ReadLine();
+        if (int.TryParse(line, out var numberOfCards))
+        {
+            foreach (var card in CardPicker.PickSomeCards(numberOfCards)) Console.WriteLine(card);
+            Environment.Exit(0);
+        }
+
+        Console.WriteLine("Unable to convert input into number..");
+        Environment.Exit(1);
     }
 }
