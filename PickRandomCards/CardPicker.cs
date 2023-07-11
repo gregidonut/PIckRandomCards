@@ -29,6 +29,16 @@ public class CardPicker
 
     private static string RandomValue()
     {
-        throw new NotImplementedException();
+        var values = new[]
+        {
+            "Ace",
+            "Jack",
+            "Queen",
+            "King"
+        };
+        
+        var rnd = new Random();
+
+        return values[rnd.Next(values.Length)];
     }
 }
