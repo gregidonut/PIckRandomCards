@@ -6,6 +6,12 @@ internal static class Program
     {
         if (args.Length > 0)
         {
+            if (args[0] == "-d")
+            {
+                foreach (var card in CardPicker.PickSomeCards(10)) Console.WriteLine(card);
+                Environment.Exit(0);
+            }
+
             Console.WriteLine("unexpected arg/s: ");
             foreach (var arg in args) Console.WriteLine(arg);
 
