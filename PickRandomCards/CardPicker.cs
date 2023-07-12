@@ -4,10 +4,7 @@ public class CardPicker
 {
     public static string[] PickSomeCards(int numberOfCards)
     {
-        if ( numberOfCards is > 52 or < 1 )
-        {
-            throw new ArgumentOutOfRangeException();
-        }
+        if (numberOfCards is > 52 or < 1) throw new ArgumentOutOfRangeException();
 
         var pickedCards = new string[numberOfCards];
 

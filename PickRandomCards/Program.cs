@@ -8,8 +8,22 @@ internal static class Program
         {
             if (args[0] == "-d")
             {
-                foreach (var card in CardPicker.PickSomeCards(10)) Console.WriteLine(card);
-                Environment.Exit(0);
+                if (args.Length == 1)
+                {
+                    foreach (var card in CardPicker.PickSomeCards(10)) Console.WriteLine(card);
+                    Environment.Exit(0);
+                }
+
+                if (int.TryParse(args[1], out var cardNumArg))
+                {
+                    foreach (var card in CardPicker.PickSomeCards(cardNumArg)) Console.WriteLine(card);
+                    Environment.Exit(0);
+                }
+                else
+                {
+                    Console.WriteLine("usage should be -d [int]");
+                    Environment.Exit(1);
+                }
             }
 
             Console.WriteLine("unexpected arg/s: ");
