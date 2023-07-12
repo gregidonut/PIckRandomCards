@@ -51,7 +51,7 @@ public class CardPicker
             "King"
         };
 
-        for (var i = 2; i < 9; i++) values.Add(i.ToString());
+        for (var i = 2; i <= 10; i++) values.Add(i.ToString());
 
         var rnd = new Random();
 
