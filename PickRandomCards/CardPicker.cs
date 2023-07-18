@@ -1,11 +1,18 @@
-using System.Runtime.Versioning;
-
 namespace PickRandomCards;
 
 public class CardPicker
 {
-    private Random _random = new();
-    private double[] _randomDoubles = new double[20];
+    private static readonly Random Random = new();
+    public static readonly double[] RandomDoubles = new double[20];
+
+    public static void GenRandomDoubles()
+    {
+        for (var i = 0; i < 20; i++)
+        {
+            var value = Random.NextDouble();
+            RandomDoubles[i] = value;
+        }
+    }
 
     public static string[] PickSomeCards(int numberOfCards)
     {
