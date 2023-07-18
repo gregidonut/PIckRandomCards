@@ -2,11 +2,11 @@ namespace PickRandomCards;
 
 public class CardPicker
 {
-    private static readonly Random Random = new();
     public static readonly double[] RandomDoubles = new double[20];
 
     public static void GenRandomDoubles()
     {
+        var rnd = new Random();
         for (var i = 0; i < 20; i++)
         {
             var value = Random.NextDouble();
