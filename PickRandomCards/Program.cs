@@ -26,6 +26,21 @@ internal static class Program
                 }
             }
 
+            if (args[0] == "--test-random-class")
+                if (args.Length == 1)
+                {
+                    Console.WriteLine("current RandomDoubles var contents: ");
+                    foreach (var value in CardPicker.RandomDoubles) Console.WriteLine(value);
+                    Console.WriteLine("=================");
+                    Console.WriteLine("generating random values...");
+                    Console.WriteLine("=================");
+                    CardPicker.GenRandomDoubles();
+                    Console.WriteLine("current RandomDoubles var contents: ");
+                    foreach (var value in CardPicker.RandomDoubles) Console.WriteLine(value);
+
+                    Environment.Exit(0);
+                }
+
             Console.WriteLine("unexpected arg/s: ");
             foreach (var arg in args) Console.WriteLine(arg);
 
