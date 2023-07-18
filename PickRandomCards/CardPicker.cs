@@ -1,7 +1,12 @@
+using System.Runtime.Versioning;
+
 namespace PickRandomCards;
 
 public class CardPicker
 {
+    private Random _random = new();
+    private double[] _randomDoubles = new double[20];
+
     public static string[] PickSomeCards(int numberOfCards)
     {
         if (numberOfCards is > 52 or < 1) throw new ArgumentOutOfRangeException();
@@ -50,6 +55,7 @@ public class CardPicker
 
         for (var i = 2; i <= 10; i++) values.Add(i.ToString());
 
+        // var rnd = new Random();
         var rnd = new Random();
 
         return values[rnd.Next(values.Count)];
